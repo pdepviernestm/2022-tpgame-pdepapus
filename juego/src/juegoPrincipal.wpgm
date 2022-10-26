@@ -1,0 +1,11 @@
+import wollok.game.*
+import example.*
+program spaceInvaders {
+		//game.title("Space Invaders")
+		game.width(20)
+		game.height(20)
+		game.boardGround("fondo.png")
+		game.addVisualCharacter(nave)
+		game.start()
+
+}
