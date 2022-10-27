@@ -6,6 +6,18 @@ program spaceInvaders {
 		game.height(20)
 		game.boardGround("fondo.png")
 		game.addVisualCharacter(nave)
+		game.addVisual(inv1)
+		keyboard.up().onPressDo{nave.bloquear()}
+		keyboard.down().onPressDo{nave.bloquear()}
+    	keyboard.left().onPressDo{nave.izquierda()}
+    	keyboard.right().onPressDo{nave.derecha()}
+   		keyboard.q().onPressDo{nave.cambiarArma(basica)}
+    	keyboard.w().onPressDo{nave.cambiarArma(mejorada)}
+    	keyboard.e().onPressDo{nave.cambiarArma(peligrosa)}	
+   		keyboard.space().onPressDo{nave.disparar()}
+   		//game.whenCollideDo(nave,{tiro => nave.perderVida(tiroEnemigo.potencia())})
+   		//game.whenCollideDo(tiro,{elemento => elemento.perderVida(tiro.potencia())})
+   		game.onTick(1000,"movimientoNormal",{inv1.moverse()})
 		game.start()
 
 }
