@@ -1,0 +1,22 @@
+import wollok.game.*
+import example.*
+program spaceInvaders {
+		game.title("Space Invaders")
+		game.width(11)
+		game.height(7)
+		game.boardGround("fondo.png")
+		game.addVisualCharacter(nave)
+		game.addVisual(inv1)
+		game.addVisual(vidas)
+		keyboard.up().onPressDo{nave.bloquear()}
+		keyboard.down().onPressDo{nave.bloquear()}
+    	keyboard.left().onPressDo{nave.izquierda()}
+    	keyboard.right().onPressDo{nave.derecha()}
+   		keyboard.q().onPressDo{nave.cambiarArma(basica)}
+    	keyboard.w().onPressDo{nave.cambiarArma(mejorada)}
+    	keyboard.e().onPressDo{nave.cambiarArma(peligrosa)}	
+   		keyboard.space().onPressDo{nave.disparar()}
+   		game.onTick(1000,"movimientoNormal",{inv1.moverse()})
+		game.start()
+
+}
